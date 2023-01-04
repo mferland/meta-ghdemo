@@ -1,0 +1,32 @@
+header:
+  version: 11
+
+machine: qemux86-64
+
+distro: poky
+
+repos:
+  ghdemo:
+    layers:
+      meta-ghdemo:
+
+  poky:
+    url: "https://git.yoctoproject.org/git/poky"
+    path: layers/poky
+    refspec: 24a3f7b3648185e33133f5d96b184a6cb6524f3d
+    layers:
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+bblayers_conf_header:
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+
+local_conf_header:
+  standard: |
+    PATCHRESOLVE = "noop"
+    CONF_VERSION = "1"
+    IMAGE_FSTYPES = "tar.gz"
