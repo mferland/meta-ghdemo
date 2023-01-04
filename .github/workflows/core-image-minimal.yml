@@ -12,5 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run kas checkout
-        run: |
-          kas checkout kas-ghdemo.yml
+        run: kas checkout kas-ghdemo.yml
+      - name: Run kas build
+        run: kas build kas-ghdemo.yml
