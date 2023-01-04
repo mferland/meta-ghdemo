@@ -1,6 +1,9 @@
 header:
   version: 11
 
+target:
+  - core-image-minimal
+
 machine: qemux86-64
 
 distro: poky
