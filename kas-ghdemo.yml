@@ -26,5 +26,5 @@ bblayers_conf_header:
 local_conf_header:
   meta-ghdemo: |
     PATCHRESOLVE = "noop"
-    CONF_VERSION = "1"
+    CONF_VERSION = "2"
     IMAGE_FSTYPES = "tar.gz"
