@@ -2,9 +2,15 @@ name: Build core-image-mininal image
 
 on: [push, workflow_dispatch]
 
+env:
+  DL_DIR: /home/marc/mnt/projet/yocto-downloads
+  SSTATE_DIR: /home/marc/mnt/projet/yocto-sstate-cache
+
 jobs:
   build:
     runs-on: self-hosted
     steps:
-      - name: hello
-        run: echo Hello, world!
+      - uses: actions/checkout@v3
+      - name: Run kas checkout
+        run: |
+          kas checkout
