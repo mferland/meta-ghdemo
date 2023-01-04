@@ -1,0 +1,10 @@
+name: Build core-image-mininal image
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: hello
+        run: echo Hello, world!
