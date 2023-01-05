@@ -3,8 +3,8 @@ name: Build core-image-mininal image
 on: [push, workflow_dispatch]
 
 env:
-  DL_DIR: /home/marc/mnt/projet/yocto-downloads
-  SSTATE_DIR: /home/marc/mnt/projet/yocto-sstate-cache
+  DL_PATH: /home/marc/mnt/projet/yocto-downloads
+  SSTATE_PATH: /home/marc/mnt/projet/yocto-sstate-cache
 
 jobs:
   build:
@@ -12,9 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run kas checkout
-        run: env DL_DIR="$DL_DIR" SSTATE_DIR="$SSTATE_DIR" kas checkout kas-ghdemo.yml
+        run: env DL_DIR="$DL_PATH" SSTATE_DIR="$SSTATE_PATH" kas checkout kas-ghdemo.yml
       - name: Run kas build
-        run: env DL_DIR="$DL_DIR" SSTATE_DIR="$SSTATE_DIR" kas build kas-ghdemo.yml
+        run: env DL_DIR="$DL_PATH" SSTATE_DIR="$SSTATE_PATH" kas build kas-ghdemo.yml
       - name: Store artifacts
         uses: actions/upload-artifact@v2
         with:
