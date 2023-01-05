@@ -12,9 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run kas checkout
-        run: env DL_DIR=${DL_DIR} SSTATE_DIR=${SSTATE_DIR} kas checkout kas-ghdemo.yml
+        run: env DL_DIR="$DL_DIR" SSTATE_DIR="$SSTATE_DIR" kas checkout kas-ghdemo.yml
       - name: Run kas build
-        run: env DL_DIR=${DL_DIR} SSTATE_DIR=${SSTATE_DIR} kas build kas-ghdemo.yml
+        run: env DL_DIR="$DL_DIR" SSTATE_DIR="$SSTATE_DIR" kas build kas-ghdemo.yml
       - name: Store artifacts
         uses: actions/upload-artifact@v2
         with:
